@@ -1,0 +1,73 @@
+{
+  "name": "aapa-evaluation",
+  "version": "1.2.20",
+  "private": true,
+  "scripts": {
+    "setup:mock": "cp ./mock/staffs.template.json ./mock/staffs.json",
+    "setup:env": "cp .env.template .env",
+    "setup": "yarn setup:env && yarn setup:mock",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "lint": "yarn lint:js && yarn lint:style",
+    "staging:clean": "git fetch origin --prune 'refs/tags/*:refs/tags/*' && git push origin --delete $(git tag -l 'staging-*') || true && git fetch origin --prune 'refs/tags/*:refs/tags/*'",
+    "staging:deploy": "yarn staging:clean && TAG=`echo staging-$(date +%Y%m%d-%H%M%S)` && git tag $TAG && git push origin $TAG"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "yarn lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@azoom/azoom-org-api-sdk": "^1.0.2",
+    "@azoom/carparking-constants": "^1.6.13",
+    "@azoom/util": "^1.2.0",
+    "@handsontable/vue": "^6.0.0",
+    "@rsmdc/rsmdc": "^1.2.2",
+    "core-js": "^3.9.1",
+    "date-fns": "1.30.1",
+    "handsontable": "^8.3.2",
+    "ky": "^0.27.0",
+    "ky-universal": "^0.9.1",
+    "material-icons": "^0.6.1",
+    "normalize-scss": "^7.0.1",
+    "nuxt": "^2.15.3",
+    "vue2-datepicker": "^3.5.0",
+    "vuex-glue": "^0.1.0",
+    "vuex-pathify": "^1.4.5",
+    "vuex-persistedstate": "^4.1.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^6.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.7.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.2.1",
+    "sass": "1.32.10",
+    "sass-loader": "10.1.1",
+    "stylelint": "^13.12.0",
+    "stylelint-config-concentric-order": "^4.0.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-scss": "^3.19.0"
+  },
+  "volta": {
+    "node": "14.18.0",
+    "yarn": "1.22.15"
+  }
+}

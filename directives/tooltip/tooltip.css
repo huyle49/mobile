@@ -1,0 +1,77 @@
+:root {
+  --white-color: #fff;
+  --arrow-offset: -12px;
+  --arrow-margin: -6px;
+  --font-family: roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.app-tooltip {
+  display: none;
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px #0000003c;
+  background-color: var(--white-color);
+  max-width: 300px;
+}
+
+.app-tooltip.-hidden {
+  display: block;
+  visibility: hidden;
+}
+
+.app-tooltip.-small {
+  max-width: 270px;
+}
+
+.app-tooltip .tooltip-text {
+  padding: 12px;
+  white-space: pre-line;
+  word-break: break-word;
+  color: var(--v-primary-base);
+  font-family: var(--font-family);
+  font-size: 11px;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent;
+  width: 0;
+  height: 0;
+}
+
+.app-tooltip.-right .tooltip-arrow {
+  top: 50%;
+  left: var(--arrow-offset);
+  margin-top: var(--arrow-margin);
+  border-right-color: var(--white-color);
+}
+
+.app-tooltip.-left .tooltip-arrow {
+  top: 50%;
+  right: var(--arrow-offset);
+  margin-top: var(--arrow-margin);
+  border-left-color: var(--white-color);
+}
+
+.app-tooltip.-top .tooltip-arrow {
+  bottom: var(--arrow-offset);
+  left: 50%;
+  margin-left: var(--arrow-margin);
+  border-top-color: var(--white-color);
+}
+
+.app-tooltip.-top-start .tooltip-arrow {
+  bottom: var(--arrow-offset);
+  left: 10%;
+  margin-left: var(--arrow-margin);
+  border-top-color: var(--white-color);
+}
+
+.app-tooltip.-bottom .tooltip-arrow {
+  top: var(--arrow-offset);
+  left: 50%;
+  margin-left: var(--arrow-margin);
+  border-bottom-color: var(--white-color);
+}

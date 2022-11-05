@@ -1,0 +1,16 @@
+@import 'normalize-scss';
+@include normalize();
+
+@import '~material-icons/iconfont/material-icons';
+@import '~@rsmdc/rsmdc/rsmdc';
+@import '~@rsmdc/chips/rs-chips';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}

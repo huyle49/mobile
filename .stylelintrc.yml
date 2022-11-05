@@ -1,0 +1,40 @@
+extends:
+  - stylelint-config-standard
+  - stylelint-config-sass-guidelines
+  - stylelint-config-prettier
+  - stylelint-config-concentric-order
+plugins:
+  - stylelint-scss
+rules:
+  rule-empty-line-before:
+    - always-multi-line
+    - ignore:
+        - after-comment
+        - first-nested
+        - inside-block
+  block-no-empty:
+    - true
+    - ignore:
+        - comments
+  selector-pseudo-element-no-unknown:
+    - true
+    - ignorePseudoElements:
+        - v-deep
+  max-nesting-depth:
+    - 3
+    - ignore: ['blockless-at-rules', 'pseudo-classes']
+  selector-max-compound-selectors: 6
+  order/properties-alphabetical-order: null
+  declaration-bang-space-after: never
+  declaration-block-no-duplicate-properties: true
+  declaration-block-semicolon-newline-after: always
+  declaration-colon-space-after: always
+  block-opening-brace-space-before: always
+  block-opening-brace-newline-after: always
+  block-closing-brace-newline-after: always
+  selector-class-pattern: ^[a-z-].*$
+  scss/at-mixin-pattern: ^[a-z].*$
+  no-descending-specificity: null
+  selector-no-qualifying-type:
+    - true
+    - ignore: ['attribute', 'class', 'id']

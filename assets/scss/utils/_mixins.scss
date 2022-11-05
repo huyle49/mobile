@@ -1,0 +1,8 @@
+@import '~@rsmdc/elevation/rs-elevation';
+
+// additional mixin that does not want to be in separate file ( =.=')
+@mixin rs-elevation($level) {
+  transition: rs-elevation-transition-value();
+  box-shadow: rs-elevation($level);
+  will-change: $rs-elevation-property;
+}

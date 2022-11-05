@@ -1,0 +1,48 @@
+$material-icons-font-path: '~material-icons/iconfont/';
+$icon-font: 'Material Icons Round';
+
+$rs-theme-primary: #580ce6;
+$rs-theme-accent: #018786;
+$rs-theme-secondary: $rs-theme-accent;
+$rs-theme-background: #fff;
+$rs-theme-surface: #fff;
+$rs-theme-on-surface: #000;
+$rs-theme-error: #d81e1e;
+$rs-theme-warning: #ff9800;
+$rs-theme-success: #48c774;
+
+$color-gray-1: #676767;
+$color-gray-2: #6d6d6d;
+$color-gray-3: #dfdfdf;
+$color-gray-4: #ebebeb;
+$color-gray-5: #555;
+$color-gray-6: #d0d0d0;
+$color-white-1: #f9f8f8;
+$color-white-2: #fcfcfc;
+$color-purple-1: #f4f2fc;
+$color-blue-1: #437ed0;
+$color-blue-2: #e2f0f5;
+$color-border-cell: #f4f4f4;
+
+// autocomplete
+$select-color: $rs-theme-on-surface;
+$select-placeholder-color: #686868;
+$select-background: $rs-theme-surface;
+$select-hover-background: #f3f3f3;
+$select-placeholder: #686868;
+$select-border: $rs-theme-primary;
+$select-active-color: $rs-theme-surface;
+$select-height: 40px;
+$select-width: 274px;
+
+// year month range
+$picker-option-bg: #e0e0e0;
+$picker-option-hover-bg: #d3d3d3;
+$picker-option-selected-bg: $rs-theme-primary;
+$picker-option-selected-color: $rs-theme-surface;
+
+// table performance
+$color-performant-greater: $rs-theme-success;
+$color-performant-under: $rs-theme-error;
+
+$invoice-pagination-height: 50px;
