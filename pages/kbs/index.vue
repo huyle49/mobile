@@ -71,20 +71,7 @@ export default {
       sex: null,
       job: null,
       interest: null,
-      hotData: [
-        // {
-        //   id: 'DT25',
-        //   name: 'Samsung Galaxy A32',
-        //   price: 6490000,
-        //   img: 'https://cdn.tgdd.vn/Products/Images/42/234315/samsung-galaxy-a32-4g-thumb-xanh-600x600-600x600.jpg',
-        //   os: 'Android',
-        //   color: 'Xanh',
-        //   ram: 6,
-        //   rom: 128,
-        //   camera: '64',
-        //   description: null,
-        // },
-      ],
+      hotData: [],
     }
   },
 

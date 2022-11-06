@@ -52,7 +52,7 @@ const { $get } = pathified('layout')
 
 export default {
   layoutContent: {
-    title: 'NHÓM 15 KBS',
+    title: 'NHÓM 17 KBS',
   },
   data() {
     return {

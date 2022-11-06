@@ -1,6 +1,6 @@
 export const RANKING_TABLE_COLUMNS = [
   {
-    name: 'STT',
+    name: 'Stt',
     mappingField: 'index',
     variant: '-index',
     format: 'number',
@@ -8,7 +8,7 @@ export const RANKING_TABLE_COLUMNS = [
     unit: '',
   },
   {
-    name: 'TÊN',
+    name: 'Tên',
     mappingField: 'name',
     variant: '-name',
     format: 'text',

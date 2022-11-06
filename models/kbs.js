@@ -11,3 +11,7 @@ export function getJob() {
 export function getKbs(params) {
   return apis.mobileApi.get(`api/kbs`, { searchParams: params }).json()
 }
+
+export function getMobile(params) {
+  return apis.mobileApi.get(`api/mobile`, { searchParams: params }).json()
+}

@@ -1,7 +1,7 @@
 export default {
   ssr: false,
   head: {
-    title: 'NHOM 15 KBS',
+    title: 'NHOM 17 KBS',
     htmlAttrs: {
       lang: 'ja',
     },
