@@ -1,4 +1,4 @@
-export const RANKING_TABLE_COLUMNS = [
+export const TABLE_COLUMNS = [
   {
     name: 'Stt',
     mappingField: 'index',
@@ -18,7 +18,7 @@ export const RANKING_TABLE_COLUMNS = [
   {
     name: 'Giá',
     mappingField: 'price',
-    variant: '-sublease-achievement-rate',
+    variant: '-price',
     format: 'integer',
     icon: '',
     unit: 'VND',
@@ -31,18 +31,9 @@ export const RANKING_TABLE_COLUMNS = [
     unit: '',
   },
   {
-    name: 'Mô tả',
-    mappingField: 'description',
-    variant: '-position-name',
-    format: 'text',
-    isSortable: false,
-    icon: '',
-    unit: '',
-  },
-  {
-    name: 'OS',
-    mappingField: 'os',
-    variant: '-achievement-rate',
+    name: 'Hãng sản xuất',
+    mappingField: 'model',
+    variant: '-model',
     format: 'text',
     isSortable: true,
 
@@ -51,7 +42,7 @@ export const RANKING_TABLE_COLUMNS = [
   {
     name: 'Màu',
     mappingField: 'color',
-    variant: '-sublease-achievement-rate',
+    variant: '-color',
     format: 'text',
     isSortable: true,
     unit: '%',

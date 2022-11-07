@@ -52,7 +52,7 @@ import iconSort from '@/assets/icons/icon-sort.svg'
 import iconSortAsc from '@/assets/icons/icon-arrow-up.svg'
 import iconSortDesc from '@/assets/icons/icon-arrow-down.svg'
 
-import { RANKING_TABLE_COLUMNS } from '@/utils/constants'
+import { TABLE_COLUMNS } from '@/utils/constants'
 const ranking = pathified('ranking')
 export default {
   name: 'RankingTable',
@@ -71,7 +71,7 @@ export default {
       iconSort,
       iconSortAsc,
       iconSortDesc,
-      tableColumns: RANKING_TABLE_COLUMNS,
+      tableColumns: TABLE_COLUMNS,
       sort: {
         sortField: '',
         type: 'desc',

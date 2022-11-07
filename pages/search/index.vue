@@ -5,13 +5,13 @@
       <div class="filter">
         <div class="item">
           <app-autocomplete
-            :options="optionSex"
+            :options="optionModel"
             value=""
             label="Hãng sản xuất"
             option-filter-prop="label"
             @selected="
               value => {
-                sex = value
+                filter.model = value
               }
             "
             @input="() => {}"
@@ -19,13 +19,13 @@
         </div>
         <div class="item">
           <app-autocomplete
-            :options="optionJob"
+            :options="optionPrice"
             value=""
             option-filter-prop="label"
             label="Giá tiền"
             @selected="
               value => {
-                job = value
+                filter.price = value
               }
             "
             @input="() => {}"
@@ -35,13 +35,13 @@
       <div class="filter">
         <div class="item">
           <app-autocomplete
-            :options="optionInterests"
+            :options="optionColor"
             value=""
             label="Màu sắc"
             option-filter-prop="label"
             @selected="
               value => {
-                interest = value
+                filter.color = value
               }
             "
             @input="() => {}"
@@ -49,13 +49,13 @@
         </div>
         <div class="item">
           <app-autocomplete
-            :options="optionInterests"
+            :options="optionRam"
             value=""
-            label="Kiểu dáng"
+            label="Ram"
             option-filter-prop="label"
             @selected="
               value => {
-                interest = value
+                filter.ram = value
               }
             "
             @input="() => {}"
@@ -72,20 +72,21 @@
 
 <script>
 import MobileTable from '@/pages/kbs/-mobile-table'
-import { getInterests, getJob, getMobile } from '@/models/kbs'
+import {
+  getInterests,
+  getJob,
+  getMobile,
+  getPrice,
+  getColor,
+  getModel,
+  getRam,
+} from '@/models/kbs'
 export default {
   name: 'KbsPage',
   components: { MobileTable },
   data() {
     return {
-      optionSex: [
-        { label: 'Nam', value: 'G2' },
-        { label: 'Nữ', value: 'G1' },
-      ],
-      optionInterests: [],
-      optionJob: [],
-      sex: null,
-      job: null,
+      filter: {},
       interest: null,
       hotData: [],
     }
@@ -100,8 +101,23 @@ export default {
   mounted() {},
   methods: {
     async initDate() {
-      const [{ value: interests }, { value: jobs }, { value: mobiles }] =
-        await Promise.allSettled([getInterests(), getJob(), getMobile()])
+      const [
+        { value: interests },
+        { value: jobs },
+        { value: mobiles },
+        { value: colors },
+        { value: prices },
+        { value: models },
+        { value: rams },
+      ] = await Promise.allSettled([
+        getInterests(),
+        getJob(),
+        getMobile(),
+        getColor(),
+        getPrice(),
+        getModel(),
+        getRam(),
+      ])
       this.optionInterests = interests.map(e => {
         return {
           label: e.description,
@@ -114,11 +130,35 @@ export default {
           value: e.id,
         }
       })
+      this.optionColor = colors.map(e => {
+        return {
+          label: e.description,
+          value: e.id,
+        }
+      })
+      this.optionModel = models.map(e => {
+        return {
+          label: e.description,
+          value: e.id,
+        }
+      })
+      this.optionPrice = prices.map(e => {
+        return {
+          label: e.description,
+          value: e.id,
+        }
+      })
+      this.optionRam = rams.map(e => {
+        return {
+          label: `${e.ram}GB`,
+          value: e.id,
+        }
+      })
       this.hotData = mobiles
     },
     handleChangeFilterOperator() {},
     async onGetMobile() {
-      const data = await getMobile()
+      const data = await getMobile(this.filter)
       this.hotData = data
     },
   },
