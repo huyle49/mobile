@@ -195,7 +195,7 @@ export default {
 .app-autocomplete {
   display: block;
   position: relative;
-  z-index: 3;
+  z-index: 4;
   cursor: pointer;
   width: $select-width;
 

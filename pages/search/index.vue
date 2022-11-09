@@ -38,6 +38,7 @@
             :options="optionColor"
             value=""
             label="Màu sắc"
+            class="app-select"
             option-filter-prop="label"
             @selected="
               value => {
@@ -53,6 +54,7 @@
             value=""
             label="Ram"
             option-filter-prop="label"
+            class="app-select"
             @selected="
               value => {
                 filter.ram = value
@@ -216,5 +218,10 @@ export default {
     color: #fff;
     font-size: 15px;
   }
+}
+
+.app-select {
+  position: absolute;
+  z-index: 3;
 }
 </style>
